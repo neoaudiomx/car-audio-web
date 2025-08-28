@@ -94,6 +94,33 @@
       color: #9b30ff;
       text-decoration: none;
     }
+
+    /* 🔹 BOTÓN WHATSAPP FLOTANTE */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: #fff;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: rebote 1.2s infinite;
+    }
+    .whatsapp-float:hover {
+      background-color: #1ebe57;
+    }
+    @keyframes rebote {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
   </style>
 </head>
 <body>
@@ -132,8 +159,10 @@
     <p>📧 <a href="mailto:neocaraudiomx@gmail.com">neocaraudiomx@gmail.com</a></p>
     <p>📱 WhatsApp: <a href="https://wa.me/524791360002" target="_blank">+52 479 136 00 02</a></p>
   </footer>
+
+  <!-- 🔹 BOTÓN FLOTANTE -->
+  <a href="https://wa.me/524791360002" class="whatsapp-float" target="_blank">
+    💬
+  </a>
 </body>
 </html>
-
-
-   
