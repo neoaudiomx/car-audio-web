@@ -3,100 +3,184 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Neo Audio</title>
+  <title>NeoAudio MX - Car Audio</title>
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #0d0d0d;
-      color: white;
-      text-align: center;
-    }
-
-    header {
+      margin: 0;
+      padding: 0;
       background-color: #1a1a1a;
-      padding: 20px;
+      color: #fff;
     }
-
-    header img {
-      height: 120px;
+    header {
+      background: linear-gradient(135deg, #6a0dad, #9b30ff);
+      padding: 25px;
+      text-align: center;
+      position: relative;
     }
-
-    h1 {
-      color: #a020f0;
-      font-size: 2.5em;
-      margin-top: 10px;
+    /* Logo en la esquina */
+    .logo {
+      position: absolute;
+      top: 15px;
+      left: 20px;
     }
-
-    .slogan {
-      font-size: 1.2em;
+    .logo img {
+      height: 60px;
+      width: auto;
+      cursor: pointer;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+    }
+    header p {
+      margin: 8px 0 0;
+      font-size: 1.5rem;
       font-weight: bold;
-      color: #ffffff;
+      background: linear-gradient(90deg, #ff0000, #ffff00, #00ff00, #00ffff, #ff00ff, #ff0000);
+      background-size: 400%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: brillo 6s linear infinite;
+    }
+    @keyframes brillo {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+    nav {
+      margin-top: 15px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .catalogo {
+      padding: 50px 20px;
+      text-align: center;
+      background: #111;
+    }
+    .catalogo h2 {
+      color: #9b30ff;
+      margin-bottom: 30px;
+      font-size: 2rem;
+    }
+    .productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .producto {
+      background: #222;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
+    }
+    .producto:hover {
+      transform: scale(1.05);
+    }
+    .producto img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .producto h3 {
+      margin: 15px 0 10px;
+      color: #fff;
+    }
+    .producto p {
+      color: #bbb;
+    }
+    footer {
+      background: #111;
+      padding: 20px;
+      text-align: center;
+      margin-top: 40px;
+    }
+    footer a {
+      color: #9b30ff;
+      text-decoration: none;
     }
 
     /* Botones flotantes */
-    .float-btn {
+    .flotante {
       position: fixed;
       bottom: 20px;
       right: 20px;
       display: flex;
       flex-direction: column;
       gap: 15px;
-      z-index: 999;
+      z-index: 1000;
     }
-
-    .float-btn a {
-      width: 60px;
-      height: 60px;
+    .flotante a img {
+      width: 55px;
+      height: 55px;
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #25D366;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-      transition: transform 0.2s;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
     }
-
-    .float-btn a:hover {
+    .flotante a img:hover {
       transform: scale(1.1);
-    }
-
-    .float-btn img {
-      width: 35px;
-      height: 35px;
-    }
-
-    .email-btn {
-      background-color: #a020f0 !important;
     }
   </style>
 </head>
 <body>
-
-  <!-- Encabezado con logo -->
   <header>
-    <img src="img/logo.png" alt="Neo Audio Logo">
-    <h1>Neo Audio</h1>
-    <p class="slogan">BORN TO BE LOUD</p>
+    <!-- Logo en esquina -->
+    <div class="logo">
+      <a href="index.html">
+        <img src="logo.png" alt="NeoAudio MX">
+      </a>
+    </div>
+
+    <h1>NeoAudio MX</h1>
+    <p>BORN TO BE LOUD</p>
+    <nav>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
   </header>
 
-  <main>
-    <h2>Bienvenido a Neo Audio</h2>
-    <p>Próximamente encontrarás aquí lo mejor en audio juvenil.</p>
-  </main>
+  <section class="catalogo" id="catalogo">
+    <h2>Nuestros Productos</h2>
+    <div class="productos">
+      <div class="producto">
+        <img src="https://via.placeholder.com/300x200.png?text=Subwoofer" alt="Subwoofer">
+        <h3>Subwoofer</h3>
+        <p>Graves potentes para tu auto.</p>
+      </div>
+      <div class="producto">
+        <img src="https://via.placeholder.com/300x200.png?text=Amplificador" alt="Amplificador">
+        <h3>Amplificador</h3>
+        <p>Calidad de sonido superior.</p>
+      </div>
+      <div class="producto">
+        <img src="https://via.placeholder.com/300x200.png?text=Est%C3%A9reo" alt="Estéreo">
+        <h3>Estéreo</h3>
+        <p>La mejor experiencia en audio.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contacto">
+    <p>📍 León de los Aldama, MX</p>
+    <p>📧 <a href="mailto:neocaraudiomx@gmail.com">neocaraudiomx@gmail.com</a></p>
+    <p>📱 WhatsApp: <a href="https://wa.me/524791360002" target="_blank">+52 479 136 00 02</a></p>
+  </footer>
 
   <!-- Botones flotantes -->
-  <div class="float-btn">
-    <!-- WhatsApp -->
-    <a href="https://wa.me/521XXXXXXXXXX" target="_blank">
+  <div class="flotante">
+    <a href="https://wa.me/524791360002" target="_blank">
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
     </a>
-    <!-- Correo -->
-    <a href="mailto:tuemail@correo.com" class="email-btn">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email">
+    <a href="mailto:neocaraudiomx@gmail.com">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Correo">
     </a>
   </div>
-
 </body>
 </html>
-
