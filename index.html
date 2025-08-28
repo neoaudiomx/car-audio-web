@@ -38,6 +38,7 @@
       height: 160px;
       width: auto;
       margin-bottom: 20px;
+      max-width: 90%; /* Se ajusta en pantallas pequeñas */
     }
 
     header h1 {
@@ -75,6 +76,34 @@
 
     nav a:hover {
       text-decoration: underline;
+    }
+
+    /* 📱 Adaptación para móviles */
+    @media (max-width: 768px) {
+      header {
+        padding: 40px 15px 30px;
+      }
+
+      .logo-small img {
+        height: 45px; /* un poco más chico en móvil */
+      }
+
+      .logo-big img {
+        height: 100px; /* logo grande más pequeño en móvil */
+      }
+
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+
+      nav a {
+        margin: 0 8px;
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
