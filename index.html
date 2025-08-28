@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NeoAudio MX - Car Audio</title>
   <style>
+    /* ====== Estilos base ====== */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -36,18 +37,16 @@
       0% { background-position: 0% 50%; }
       100% { background-position: 100% 50%; }
     }
-    nav {
-      margin-top: 15px;
-    }
+    nav { margin-top: 15px; }
     nav a {
       color: #fff;
       text-decoration: none;
       margin: 0 15px;
       font-weight: bold;
     }
-    nav a:hover {
-      text-decoration: underline;
-    }
+    nav a:hover { text-decoration: underline; }
+
+    /* ====== Catálogo ====== */
     .catalogo {
       padding: 50px 20px;
       text-align: center;
@@ -70,53 +69,48 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.4);
       transition: transform 0.3s ease;
     }
-    .producto:hover {
-      transform: scale(1.05);
-    }
-    .producto img {
-      width: 100%;
-      border-radius: 10px;
-    }
-    .producto h3 {
-      margin: 15px 0 10px;
-      color: #fff;
-    }
-    .producto p {
-      color: #bbb;
-    }
+    .producto:hover { transform: scale(1.05); }
+    .producto img { width: 100%; border-radius: 10px; }
+    .producto h3 { margin: 15px 0 10px; color: #fff; }
+    .producto p { color: #bbb; }
+
+    /* ====== Footer ====== */
     footer {
       background: #111;
       padding: 20px;
       text-align: center;
       margin-top: 40px;
     }
-    footer a {
-      color: #9b30ff;
-      text-decoration: none;
-    }
-    /* Botón flotante de WhatsApp */
-    .whatsapp-float {
+    footer a { color: #9b30ff; text-decoration: none; }
+
+    /* ====== Botones flotantes ====== */
+    .whatsapp-float, .email-float {
       position: fixed;
       width: 60px;
       height: 60px;
-      bottom: 20px;
       right: 20px;
-      background-color: #25d366;
       border-radius: 50%;
       box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
       z-index: 100;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      text-decoration: none;
     }
-    .whatsapp-float:hover {
-      transform: scale(1.1);
+    .whatsapp-float {
+      bottom: 20px;              /* abajo a la derecha */
+      background-color: #25d366; /* verde WhatsApp */
     }
-    .whatsapp-float img {
-      width: 35px;
-      height: 35px;
+    .whatsapp-float:hover { transform: scale(1.1); background-color: #1ebe57; }
+    .whatsapp-float img { width: 35px; height: 35px; }
+
+    .email-float {
+      bottom: 90px;              /* mismo estilo, arriba del WhatsApp */
+      background-color: #6c63ff; /* morado para combinar con tu marca */
     }
+    .email-float:hover { transform: scale(1.1); background-color: #5b53e6; }
+    .email-float svg { width: 32px; height: 32px; fill: white; }
   </style>
 </head>
 <body>
@@ -156,12 +150,24 @@
     <p>📱 WhatsApp: <a href="https://wa.me/524791360002" target="_blank">+52 479 136 00 02</a></p>
   </footer>
 
-  <!-- Botón flotante de WhatsApp -->
-  <a href="https://wa.me/524791360002?text=%C2%A1Que%20onda!%20Vi%20su%20p%C3%A1gina%20y%20quiero%20info%20%F0%9F%94%8A%F0%9F%94%A5" 
-     class="whatsapp-float" 
-     target="_blank">
+  <!-- 🔵 Botón flotante de Correo (igual estilo que WhatsApp) -->
+  <a
+    class="email-float"
+    href="mailto:neocaraudiomx@gmail.com?subject=Solicitud%20de%20informaci%C3%B3n%20Car%20Audio&body=Hola%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20informaci%C3%B3n%20sobre%20sus%20productos.%0A%0ANombre%3A%20%0ATel%C3%A9fono%3A%20"
+    aria-label="Enviar correo a NeoAudio MX">
+    <!-- Icono sobre SVG para que sea ligero y nítido -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+    </svg>
+  </a>
+
+  <!-- 🟢 Botón flotante de WhatsApp (logo oficial) -->
+  <a
+    class="whatsapp-float"
+    href="https://wa.me/524791360002?text=%C2%A1Que%20onda!%20Vi%20su%20p%C3%A1gina%20y%20quiero%20info%20%F0%9F%94%8A%F0%9F%94%A5"
+    target="_blank" rel="noopener"
+    aria-label="Chatear por WhatsApp con NeoAudio MX">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
   </a>
 </body>
 </html>
-
