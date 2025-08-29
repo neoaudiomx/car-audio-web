@@ -137,6 +137,199 @@
 <body>
 
   <header>
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeoAudio MX</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(180deg, #2c003e, #000);
+      color: white;
+      text-align: center;
+    }
+
+    header {
+      padding: 20px;
+    }
+
+    header img {
+      max-width: 180px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 15px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff00ff;
+    }
+
+    .slogan {
+      font-size: 22px;
+      font-weight: bold;
+      margin: 15px 0;
+      color: #b84dff;
+    }
+
+    .productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .producto {
+      border: 2px solid #b84dff;
+      border-radius: 12px;
+      padding: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .producto:hover {
+      box-shadow: 0 0 25px #b84dff;
+      transform: scale(1.05);
+    }
+
+    .contacto {
+      margin: 30px 0;
+    }
+
+    .contacto button {
+      background: #25D366;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .contacto button:hover {
+      background: #1ebe5a;
+    }
+
+    footer {
+      padding: 20px;
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    /* Botones flotantes redes sociales */
+    .social-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 1000;
+    }
+
+    .social-float a {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 24px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .social-float a.whatsapp { background: #25D366; }
+    .social-float a.facebook { background: #1877F2; }
+    .social-float a.instagram {
+      background: radial-gradient(circle at 30% 30%, #feda77, #dd2a7b, #8134af, #515bd4);
+    }
+
+    .social-float a:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px rgba(255,255,255,0.7);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.png" alt="NeoAudio MX Logo"> <!-- Aquí pon tu logo -->
+    <div class="slogan">BORN TO BE LOUD</div>
+    <nav>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#productos">Productos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="productos" class="productos">
+      <div class="producto">
+        <h3>Subwoofers</h3>
+        <p>Bajos potentes para vibrar con tu música.</p>
+      </div>
+      <div class="producto">
+        <h3>Medios Rangos</h3>
+        <p>Sonido claro y balanceado para frecuencias medias.</p>
+      </div>
+      <div class="producto">
+        <h3>Tweeters</h3>
+        <p>Agudos cristalinos para máxima fidelidad.</p>
+      </div>
+      <div class="producto">
+        <h3>Accesorios</h3>
+        <p>Todo lo que necesitas para complementar tu sistema.</p>
+      </div>
+    </section>
+
+    <section id="contacto" class="contacto">
+      <h2>¿Quieres más información?</h2>
+      <p>Contáctanos para cotizaciones y asesoría personalizada.</p>
+      <a href="https://wa.me/524791360002" target="_blank">
+        <button>Escríbenos en WhatsApp</button>
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <p>📍 León de los Aldama, MX</p>
+    <p>✉️ neoaudiomx@gmail.com</p>
+    <p>📞 +52 479 136 0002</p>
+    <p>© 2025 NeoAudio MX - Todos los derechos reservados</p>
+  </footer>
+
+  <!-- Botones flotantes redes sociales -->
+  <div class="social-float">
+    <a href="https://wa.me/524791360002" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.facebook.com/share/15HuLrMpFs/?mibextid=wwXIfr" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/neo_audiocar?igsh=MWIyem1vMHd0NXd4aQ%3D%3D&utm_source=qr" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+  </div>
+
+</body>
+</html>
     <img src="logo.png" alt="NeoAudio MX Logo"> <!-- Aquí pon tu logo -->
     <div class="slogan">BORN TO BE LOUD</div>
     <nav>
