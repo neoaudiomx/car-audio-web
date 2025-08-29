@@ -6,188 +6,129 @@
   <title>NeoAudio MX</title>
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #0a0a0a;
-      color: #fff;
+      margin: 0;
+      background: #0d0d0d;
+      color: white;
       text-align: center;
     }
-
     header {
-      padding: 20px;
-      background: linear-gradient(90deg, #2e026d, #3b0764, #1d0f4e);
-      color: #b26fff;
-      font-size: 2rem;
-      font-weight: bold;
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
       align-items: center;
+      padding: 15px 30px;
+      background: linear-gradient(to right, #0d0d0d, #1a1a40);
     }
-
     header img {
-      max-width: 120px;
-      height: auto;
-      margin-bottom: 10px;
+      height: 50px;
     }
-
-    header span {
-      display: block;
-      font-size: 1rem;
-      font-weight: normal;
-      color: #aaa;
+    header .social-icons a {
+      margin: 0 8px;
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
     }
-
-    h2 {
-      margin-top: 30px;
-      color: #b26fff;
+    h1 {
+      margin: 20px 0;
+      font-size: 28px;
+      color: #8a2be2;
     }
-
     .productos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      padding: 20px;
-      max-width: 1000px;
-      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px;
     }
-
-    .producto {
-      border: 2px solid #b26fff;
+    .card {
+      background: #1a1a1a;
+      border: 1px solid #333;
       border-radius: 12px;
       padding: 20px;
-      background: rgba(255, 255, 255, 0.05);
-      transition: transform 0.3s, box-shadow 0.3s;
+      margin: 10px;
+      width: 220px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.6);
     }
-
-    .producto:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px #b26fff;
-    }
-
-    .producto h3 {
-      margin: 10px 0;
+    .card h3 {
       color: #fff;
     }
-
-    .producto p {
-      font-size: 0.9rem;
-      color: #ccc;
-    }
-
     footer {
-      background-color: #111;
-      padding: 20px;
       margin-top: 40px;
-      font-size: 0.9rem;
-      color: #aaa;
+      padding: 20px;
+      background: #111;
     }
-
-    footer a {
-      color: #b26fff;
-      text-decoration: none;
-    }
-
     /* Botones flotantes */
-    .floating-buttons {
+    .floating-btns {
       position: fixed;
       bottom: 20px;
       right: 20px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      z-index: 1000;
+      gap: 12px;
     }
-
-    .floating-buttons a {
+    .floating-btns a {
       width: 50px;
       height: 50px;
       border-radius: 50%;
+      background: #8a2be2;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #b26fff;
-      color: #fff;
+      color: white;
+      font-size: 22px;
       text-decoration: none;
-      font-size: 1.4rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-      transition: transform 0.3s;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.5);
     }
-
-    .floating-buttons a:hover {
-      transform: scale(1.1);
-      background: #7e22ce;
-    }
-
-    /* Logo flotante abajo izquierda */
-    .logo-flotante {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      z-index: 1000;
-    }
-
-    .logo-flotante img {
-      width: 60px;
-      height: auto;
-      border-radius: 50%;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-      transition: transform 0.3s;
-    }
-
-    .logo-flotante img:hover {
-      transform: scale(1.1);
+    .floating-btns a:hover {
+      background: #5d1fb3;
     }
   </style>
+  <!-- Íconos -->
+  <script src="https://kit.fontawesome.com/a2e0e6adf6.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-  <!-- Header con logo -->
   <header>
-    <img src="logo.png" alt="NeoAudio MX Logo"> <!-- Reemplaza con la ruta de tu logo -->
-    NeoAudio MX
-    <span>BORN TO BE LOUD</span>
+    <img src="logo.png" alt="NeoAudio MX Logo">
+    <div class="social-icons">
+      <a href="https://wa.me/524791360002" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.instagram.com/neo_audiocar?igsh=MWIyem1vMHd0NXd4aQ%3D%3D&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/share/15HuLrMpFs/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook"></i></a>
+    </div>
   </header>
 
-  <h2>Nuestros Productos</h2>
+  <h1>BORN TO BE LOUD</h1>
 
   <section class="productos">
-    <div class="producto">
-      <h3>🔊 Subwoofers</h3>
+    <div class="card">
+      <h3><i class="fas fa-volume-up"></i> Subwoofers</h3>
       <p>Bajos potentes para vibrar con tu música.</p>
     </div>
-    <div class="producto">
-      <h3>🎶 Medios Rangos</h3>
+    <div class="card">
+      <h3><i class="fas fa-music"></i> Medios Rangos</h3>
       <p>Sonido claro y balanceado para frecuencias medias.</p>
     </div>
-    <div class="producto">
-      <h3>🎵 Tweeters</h3>
+    <div class="card">
+      <h3><i class="fas fa-bullhorn"></i> Tweeters</h3>
       <p>Agudos cristalinos para máxima fidelidad.</p>
     </div>
-    <div class="producto">
-      <h3>⚡ Accesorios</h3>
+    <div class="card">
+      <h3><i class="fas fa-bolt"></i> Accesorios</h3>
       <p>Todo lo que necesitas para complementar tu sistema.</p>
     </div>
   </section>
 
   <footer>
     <p>📍 León de los Aldama, MX</p>
-    <p>📧 <a href="mailto:neocaraudiomx@gmail.com">neocaraudiomx@gmail.com</a></p>
-    <p>📱 <a href="tel:+524791360002">4791360002</a></p>
+    <p>✉️ <a href="mailto:neoaaudiomx@gmail.com">neoaaudiomx@gmail.com</a></p>
+    <p>📞 <a href="tel:+524791360002">+52 479 136 0002</a></p>
     <p>© 2025 NeoAudio MX - Todos los derechos reservados</p>
   </footer>
 
   <!-- Botones flotantes -->
-  <div class="floating-buttons">
-    <a href="https://wa.me/524791360002" target="_blank">💬</a>
-    <a href="https://www.facebook.com" target="_blank">📘</a>
-    <a href="https://www.instagram.com" target="_blank">📸</a>
-  </div>
-
-  <!-- Logo flotante -->
-  <div class="logo-flotante">
-    <a href="https://www.facebook.com" target="_blank">
-      <img src="logo.png" alt="NeoAudio MX Logo"> <!-- Reemplaza con el mismo logo -->
-    </a>
+  <div class="floating-btns">
+    <a href="https://wa.me/524791360002" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.instagram.com/neo_audiocar?igsh=MWIyem1vMHd0NXd4aQ%3D%3D&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/share/15HuLrMpFs/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook"></i></a>
   </div>
 
 </body>
