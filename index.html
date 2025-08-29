@@ -85,27 +85,40 @@
       right: 20px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
+      z-index: 100;
     }
 
-    .floating-buttons a {
+    .floating-buttons a img {
       width: 50px;
       height: 50px;
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #b26fff;
-      color: #fff;
-      text-decoration: none;
-      font-size: 1.4rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
       transition: transform 0.3s;
     }
 
-    .floating-buttons a:hover {
+    .floating-buttons a img:hover {
+      transform: scale(1.15);
+    }
+
+    /* Logo flotante */
+    .floating-logo {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 100;
+    }
+
+    .floating-logo img {
+      width: 70px;
+      height: auto;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      transition: transform 0.3s;
+    }
+
+    .floating-logo img:hover {
       transform: scale(1.1);
-      background: #7e22ce;
     }
   </style>
 </head>
@@ -146,9 +159,20 @@
 
   <!-- Botones flotantes -->
   <div class="floating-buttons">
-    <a href="https://wa.me/524791360002" target="_blank">💬</a>
-    <a href="https://www.facebook.com" target="_blank">📘</a>
-    <a href="https://www.instagram.com" target="_blank">📸</a>
+    <a href="https://wa.me/524791360002" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    </a>
+    <a href="https://www.facebook.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+    </a>
+    <a href="https://www.instagram.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+    </a>
+  </div>
+
+  <!-- Logo flotante -->
+  <div class="floating-logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png" alt="NeoAudio MX Logo">
   </div>
 
 </body>
