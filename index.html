@@ -6,138 +6,150 @@
   <title>NeoAudio MX</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #0d0d0d;
-      color: white;
       margin: 0;
-      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0a0a0a;
+      color: #fff;
       text-align: center;
     }
 
     header {
       padding: 20px;
+      background: linear-gradient(90deg, #2e026d, #3b0764, #1d0f4e);
+      color: #b26fff;
+      font-size: 2rem;
+      font-weight: bold;
     }
 
-    header img {
-      height: 50px;
-    }
-
-    h1 {
-      font-size: 2.5em;
-      color: #b84dff;
-      margin: 10px 0;
-      text-shadow: 0 0 10px #b84dff;
+    header span {
+      display: block;
+      font-size: 1rem;
+      font-weight: normal;
+      color: #aaa;
     }
 
     h2 {
-      color: #b84dff;
       margin-top: 30px;
+      color: #b26fff;
     }
 
     .productos {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
       padding: 20px;
-      max-width: 1200px;
+      max-width: 1000px;
       margin: auto;
     }
 
     .producto {
-      background: #1a1a1a;
+      border: 2px solid #b26fff;
+      border-radius: 12px;
       padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 0 10px rgba(184, 77, 255, 0.6);
-      transition: transform 0.3s;
+      background: rgba(255, 255, 255, 0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .producto:hover {
       transform: scale(1.05);
+      box-shadow: 0 0 15px #b26fff;
     }
 
     .producto h3 {
-      color: #b84dff;
+      margin: 10px 0;
+      color: #fff;
+    }
+
+    .producto p {
+      font-size: 0.9rem;
+      color: #ccc;
     }
 
     footer {
-      margin-top: 50px;
+      background-color: #111;
       padding: 20px;
-      background: #111;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #aaa;
     }
 
-    footer p {
-      margin: 5px 0;
+    footer a {
+      color: #b26fff;
+      text-decoration: none;
     }
 
-    .contacto {
-      margin-top: 20px;
-    }
-
-    /* Logos flotantes */
-    .social {
+    /* Botones flotantes */
+    .floating-buttons {
       position: fixed;
-      top: 50%;
-      left: 10px;
-      transform: translateY(-50%);
+      bottom: 20px;
+      right: 20px;
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 10px;
     }
 
-    .social a img {
-      width: 40px;
-      height: 40px;
+    .floating-buttons a {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #b26fff;
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.4rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
       transition: transform 0.3s;
     }
 
-    .social a img:hover {
-      transform: scale(1.2);
+    .floating-buttons a:hover {
+      transform: scale(1.1);
+      background: #7e22ce;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <img src="logo.png" alt="NeoAudio MX Logo">
-    <h1>BORN TO BE LOUD</h1>
+    NeoAudio MX
+    <span>BORN TO BE LOUD</span>
   </header>
 
-  <section>
-    <h2>Productos</h2>
-    <div class="productos">
-      <div class="producto">
-        <h3>Subwoofers</h3>
-        <p>Bajos potentes para vibrar con la música.</p>
-      </div>
-      <div class="producto">
-        <h3>Medios Rangos</h3>
-        <p>Sonido claro y balanceado para frecuencias medias.</p>
-      </div>
-      <div class="producto">
-        <h3>Tweeters</h3>
-        <p>Agudos cristalinos para máxima fidelidad.</p>
-      </div>
-      <div class="producto">
-        <h3>Accesorios</h3>
-        <p>Todo lo que necesitas para complementar tu sistema.</p>
-      </div>
+  <h2>Nuestros Productos</h2>
+
+  <section class="productos">
+    <div class="producto">
+      <h3>🔊 Subwoofers</h3>
+      <p>Bajos potentes para vibrar con tu música.</p>
+    </div>
+    <div class="producto">
+      <h3>🎶 Medios Rangos</h3>
+      <p>Sonido claro y balanceado para frecuencias medias.</p>
+    </div>
+    <div class="producto">
+      <h3>🎵 Tweeters</h3>
+      <p>Agudos cristalinos para máxima fidelidad.</p>
+    </div>
+    <div class="producto">
+      <h3>⚡ Accesorios</h3>
+      <p>Todo lo que necesitas para complementar tu sistema.</p>
     </div>
   </section>
 
   <footer>
-    <h2>¿Quieres más información? Escríbenos</h2>
-    <div class="contacto">
-      <p>📍 León de los Aldama</p>
-      <p>📧 <a href="mailto:neocaraudiomx@gmail.com" style="color:#b84dff;">neocaraudiomx@gmail.com</a></p>
-      <p>📱 <a href="https://wa.me/524791360002" target="_blank" style="color:#b84dff;">4791360002</a></p>
-    </div>
+    <p>📍 León de los Aldama, MX</p>
+    <p>📧 <a href="mailto:neocaraudiomx@gmail.com">neocaraudiomx@gmail.com</a></p>
+    <p>📱 <a href="tel:+524791360002">4791360002</a></p>
     <p>© 2025 NeoAudio MX - Todos los derechos reservados</p>
   </footer>
 
-  <!-- Logos flotantes -->
-  <div class="social">
-    <a href="#"><img src="facebook.png" alt="Facebook"></a>
-    <a href="#"><img src="instagram.png" alt="Instagram"></a>
-    <a href="#"><img src="whatsapp.png" alt="WhatsApp"></a>
+  <!-- Botones flotantes -->
+  <div class="floating-buttons">
+    <a href="https://wa.me/524791360002" target="_blank">💬</a>
+    <a href="https://www.facebook.com" target="_blank">📘</a>
+    <a href="https://www.instagram.com" target="_blank">📸</a>
   </div>
+
 </body>
 </html>
