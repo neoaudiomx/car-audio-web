@@ -31,6 +31,21 @@
       height: 60px;
       width: auto;
       cursor: pointer;
+      transition: transform 0.3s ease;
+      filter: drop-shadow(0 0 8px #9b30ff);
+      animation: pulse-glow 2s infinite ease-in-out;
+    }
+
+    /* Efecto de pulso */
+    @keyframes pulse-glow {
+      0% { filter: drop-shadow(0 0 6px #9b30ff); transform: scale(1); }
+      50% { filter: drop-shadow(0 0 18px #b84dff); transform: scale(1.08); }
+      100% { filter: drop-shadow(0 0 6px #9b30ff); transform: scale(1); }
+    }
+
+    .logo-small img:hover {
+      transform: scale(1.15);
+      filter: drop-shadow(0 0 20px #d580ff);
     }
 
     /* Logo grande en el centro */
@@ -90,10 +105,9 @@
       }
 
       .logo-small img {
-        height: 45px;
+        height: 70px;
       }
 
-      /* Ocultar logo grande en móviles */
       .logo-big {
         display: none;
       }
