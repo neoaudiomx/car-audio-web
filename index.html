@@ -34,11 +34,16 @@
     }
 
     /* Logo grande en el centro */
+    .logo-big {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
     .logo-big img {
       height: 160px;
       width: auto;
-      margin-bottom: 20px;
-      max-width: 90%; /* Se ajusta en pantallas pequeñas */
+      max-width: 90%;
     }
 
     header h1 {
@@ -85,11 +90,12 @@
       }
 
       .logo-small img {
-        height: 45px; /* un poco más chico en móvil */
+        height: 45px;
       }
 
-      .logo-big img {
-        height: 100px; /* logo grande más pequeño en móvil */
+      /* Ocultar logo grande en móviles */
+      .logo-big {
+        display: none;
       }
 
       header h1 {
