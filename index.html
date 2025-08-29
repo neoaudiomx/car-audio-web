@@ -3,190 +3,140 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NeoAudio MX - Car Audio</title>
+  <title>NeoAudio</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #1a1a1a;
+      font-family: Arial, sans-serif;
+      background: #0f0f0f;
       color: #fff;
     }
-
     header {
-      background: linear-gradient(135deg, #6a0dad, #9b30ff);
-      padding: 25px;
-      text-align: center;
-      position: relative;
+      background: #1a1a1a;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-
-    /* Logo pequeño en esquina */
-    .logo-pequeno {
-      position: absolute;
-      top: 15px;
-      left: 20px;
-    }
-    .logo-pequeno img {
-      height: 55px;
-      width: auto;
+    header img {
+      height: 40px;
       cursor: pointer;
-    }
-
-    header h1 {
-      margin: 10px 0 0;
-      font-size: 2.5rem;
-      letter-spacing: 2px;
-    }
-    header p {
-      margin: 8px 0 0;
-      font-size: 1.5rem;
-      font-weight: bold;
-      background: linear-gradient(90deg, #ff0000, #ffff00, #00ff00, #00ffff, #ff00ff, #ff0000);
-      background-size: 400%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: brillo 6s linear infinite;
-    }
-    @keyframes brillo {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 100% 50%; }
-    }
-
-    nav {
-      margin-top: 15px;
     }
     nav a {
       color: #fff;
+      margin-left: 20px;
       text-decoration: none;
-      margin: 0 15px;
       font-weight: bold;
     }
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .catalogo {
-      padding: 50px 20px;
+    .hero {
       text-align: center;
-      background: #111;
+      padding: 100px 20px;
+      background: linear-gradient(to bottom, #1a1a1a, #0f0f0f);
     }
-    .catalogo h2 {
-      color: #9b30ff;
-      margin-bottom: 30px;
-      font-size: 2rem;
+    .hero h1 {
+      font-size: 3em;
+      color: #b300ff;
+    }
+    .section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .section h2 {
+      color: #b300ff;
+      margin-bottom: 20px;
+    }
+    .section p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.2em;
     }
     .productos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
       gap: 20px;
+      margin-top: 30px;
     }
     .producto {
-      background: #222;
+      background: #1a1a1a;
       padding: 20px;
       border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-      transition: transform 0.3s ease;
+      width: 250px;
+      box-shadow: 0 0 10px rgba(179, 0, 255, 0.4);
+      transition: transform 0.3s;
     }
     .producto:hover {
       transform: scale(1.05);
     }
     .producto img {
-      width: 100%;
+      max-width: 100%;
       border-radius: 10px;
     }
-    .producto h3 {
-      margin: 15px 0 10px;
-      color: #fff;
-    }
-    .producto p {
-      color: #bbb;
-    }
-
     footer {
-      background: #111;
-      padding: 20px;
+      background: #1a1a1a;
+      padding: 40px 20px;
       text-align: center;
-      margin-top: 40px;
     }
-    footer a {
-      color: #9b30ff;
-      text-decoration: none;
+    footer h2 {
+      color: #b300ff;
     }
-
-    /* Botones flotantes */
-    .flotante {
+    /* Logos flotantes */
+    .floating-logos {
       position: fixed;
-      bottom: 20px;
       right: 20px;
+      bottom: 20px;
       display: flex;
       flex-direction: column;
       gap: 15px;
-      z-index: 1000;
+      z-index: 2000;
     }
-    .flotante a img {
-      width: 55px;
-      height: 55px;
+    .floating-logos a img {
+      width: 45px;
+      height: 45px;
       border-radius: 50%;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-      transition: transform 0.3s ease;
+      box-shadow: 0 0 10px rgba(179, 0, 255, 0.6);
+      transition: transform 0.3s;
     }
-    .flotante a img:hover {
+    .floating-logos a img:hover {
       transform: scale(1.1);
     }
   </style>
 </head>
 <body>
-  <header>
-    <!-- Logo pequeño fijo -->
-    <div class="logo-pequeno">
-      <a href="index.html">
-        <img src="logo.png" alt="NeoAudio MX">
-      </a>
-    </div>
 
-    <h1>NeoAudio MX</h1>
-    <p>BORN TO BE LOUD</p>
+  <!-- Header -->
+  <header>
+    <a href="#inicio"><img src="logo.png" alt="NeoAudio Logo"></a>
     <nav>
-      <a href="#catalogo">Catálogo</a>
+      <a href="#productos">Productos</a>
       <a href="#contacto">Contacto</a>
     </nav>
   </header>
 
-  <section class="catalogo" id="catalogo">
+  <!-- Hero -->
+  <section class="hero" id="inicio">
+    <h1>Bienvenido a NeoAudio</h1>
+    <p>Calidad y potencia en sistemas de sonido automotriz</p>
+  </section>
+
+  <!-- Productos -->
+  <section class="section" id="productos">
     <h2>Nuestros Productos</h2>
     <div class="productos">
       <div class="producto">
-        <img src="https://via.placeholder.com/300x200.png?text=Subwoofer" alt="Subwoofer">
-        <h3>Subwoofer</h3>
-        <p>Graves potentes para tu auto.</p>
+        <img src="medios.png" alt="Medios Rangos">
+        <h3>Medios Rangos</h3>
+        <p>Sonido claro y balanceado para todas las frecuencias medias.</p>
       </div>
       <div class="producto">
-        <img src="https://via.placeholder.com/300x200.png?text=Amplificador" alt="Amplificador">
-        <h3>Amplificador</h3>
-        <p>Calidad de sonido superior.</p>
+        <img src="subwoofer.png" alt="Subwoofers">
+        <h3>Subwoofers</h3>
+        <p>Bajos profundos y potentes para vibrar con la música.</p>
       </div>
       <div class="producto">
-        <img src="https://via.placeholder.com/300x200.png?text=Est%C3%A9reo" alt="Estéreo">
-        <h3>Estéreo</h3>
-        <p>La mejor experiencia en audio.</p>
-      </div>
-    </div>
-  </section>
-
-  <footer id="contacto">
-    <p>📍 León de los Aldama, MX</p>
-    <p>📧 <a href="mailto:neocaraudiomx@gmail.com">neocaraudiomx@gmail.com</a></p>
-    <p>📱 WhatsApp: <a href="https://wa.me/524791360002" target="_blank">+52 479 136 00 02</a></p>
-  </footer>
-
-  <!-- Botones flotantes -->
-  <div class="flotante">
-    <a href="https://wa.me/524791360002" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-    </a>
-    <a href="mailto:neocaraudiomx@gmail.com">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Correo">
-    </a>
-  </div>
-</body>
-</html>
+        <img src="amplificador.png" alt="Amplificadores">
+        <h3>Amplificadores</h3>
+        <p>Potencia pura para llevar tu sonido al siguiente nivel.</
