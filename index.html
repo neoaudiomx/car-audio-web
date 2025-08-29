@@ -5,46 +5,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NeoAudio</title>
   <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- Tipografía moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
-      background: linear-gradient(135deg, #0d0d0d, #1a0033);
+      background: #0d0d0d;
       color: white;
       text-align: center;
     }
+
     header {
-      padding: 20px;
+      padding: 15px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      background: rgba(20, 0, 40, 0.9);
     }
     header img {
-      height: 60px;
+      height: 50px;
     }
     nav a {
       margin: 0 15px;
       text-decoration: none;
-      color: white;
-      font-weight: bold;
+      color: #bb33ff;
+      font-weight: 600;
+      transition: color 0.3s;
     }
+    nav a:hover {
+      color: #ffffff;
+    }
+
     h1 {
       font-size: 3em;
       margin-top: 40px;
       color: #bb33ff;
+      font-weight: 800;
     }
+
     .slogan {
-      font-size: 1.5em;
-      margin: 10px 0;
-      color: #ffcc00;
-      font-weight: bold;
-      text-shadow: 2px 2px 8px rgba(255, 0, 255, 0.7);
-      animation: glow 2s infinite alternate;
+      font-size: 1.4em;
+      margin: 10px 0 30px;
+      font-weight: 600;
+      color: #bb33ff;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      position: relative;
     }
-    @keyframes glow {
-      from { text-shadow: 2px 2px 8px #ff33cc; }
-      to   { text-shadow: 2px 2px 20px #ffcc00; }
+    .slogan::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #bb33ff;
+      margin: 8px auto 0;
+      border-radius: 2px;
     }
+
     .productos {
       display: flex;
       justify-content: center;
@@ -53,20 +73,31 @@
       flex-wrap: wrap;
     }
     .card {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 20px;
-      border-radius: 12px;
-      width: 250px;
-      transition: transform 0.3s;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(187, 51, 255, 0.2);
+      padding: 25px;
+      border-radius: 14px;
+      width: 240px;
+      transition: transform 0.3s, border 0.3s;
     }
     .card:hover {
-      transform: scale(1.05);
-      background: rgba(187, 51, 255, 0.2);
+      transform: translateY(-5px);
+      border: 1px solid #bb33ff;
     }
+    .card h2 {
+      color: #bb33ff;
+      font-weight: 600;
+    }
+
     footer {
-      margin-top: 50px;
+      margin-top: 60px;
       padding: 20px;
-      background: #0d0d0d;
+      background: #0b0b0b;
+      font-size: 0.9em;
+    }
+    footer p {
+      margin: 5px 0;
+      color: #bbb;
     }
   </style>
 </head>
@@ -79,8 +110,8 @@
     </nav>
   </header>
 
-  <h1>Bienvenido a NeoAudio</h1>
-  <p class="slogan">🔥 BORN TO BE LOUD 🔥</p>
+  <h1>NeoAudio</h1>
+  <p class="slogan">Born to be loud</p>
   <p>Calidad y potencia en sistemas de sonido automotriz</p>
 
   <section id="productos" class="productos">
@@ -99,7 +130,7 @@
   </section>
 
   <footer id="contacto">
-    <p>📩 Contáctanos: contacto@neoaudio.com</p>
+    <p>📩 contacto@neoaudio.com</p>
     <p>WhatsApp | Facebook | Instagram</p>
   </footer>
 </body>
