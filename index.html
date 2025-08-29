@@ -14,59 +14,44 @@
     }
 
     header {
-      background: linear-gradient(135deg, #000, #6a0dad);
-      padding: 60px 20px 40px;
+      background: linear-gradient(135deg, #6a0dad, #9b30ff);
+      padding: 25px;
       text-align: center;
       position: relative;
     }
 
-    /* Logo pequeño en la esquina */
-    .logo-small {
+    /* Logo grande centrado */
+    .logo-grande {
+      margin-top: 10px;
+    }
+    .logo-grande img {
+      height: 120px;
+      width: auto;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .logo-grande.oculto {
+      opacity: 0;
+      transform: scale(0.8);
+      pointer-events: none;
+    }
+
+    /* Logo pequeño en esquina */
+    .logo-pequeno {
       position: absolute;
       top: 15px;
       left: 20px;
     }
-
-    .logo-small img {
-      height: 60px;
+    .logo-pequeno img {
+      height: 55px;
       width: auto;
       cursor: pointer;
-      transition: transform 0.3s ease;
-      filter: drop-shadow(0 0 8px #9b30ff);
-      animation: pulse-glow 2s infinite ease-in-out;
-    }
-
-    /* Efecto de pulso */
-    @keyframes pulse-glow {
-      0% { filter: drop-shadow(0 0 6px #9b30ff); transform: scale(1); }
-      50% { filter: drop-shadow(0 0 18px #b84dff); transform: scale(1.08); }
-      100% { filter: drop-shadow(0 0 6px #9b30ff); transform: scale(1); }
-    }
-
-    .logo-small img:hover {
-      transform: scale(1.15);
-      filter: drop-shadow(0 0 20px #d580ff);
-    }
-
-    /* Logo grande en el centro */
-    .logo-big {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-
-    .logo-big img {
-      height: 160px;
-      width: auto;
-      max-width: 90%;
     }
 
     header h1 {
-      margin: 0;
+      margin: 10px 0 0;
       font-size: 2.5rem;
       letter-spacing: 2px;
     }
-
     header p {
       margin: 8px 0 0;
       font-size: 1.5rem;
@@ -77,7 +62,6 @@
       -webkit-text-fill-color: transparent;
       animation: brillo 6s linear infinite;
     }
-
     @keyframes brillo {
       0% { background-position: 0% 50%; }
       100% { background-position: 100% 50%; }
@@ -86,68 +70,155 @@
     nav {
       margin-top: 15px;
     }
-
     nav a {
       color: #fff;
       text-decoration: none;
       margin: 0 15px;
       font-weight: bold;
     }
-
     nav a:hover {
       text-decoration: underline;
     }
 
-    /* 📱 Adaptación para móviles */
-    @media (max-width: 768px) {
-      header {
-        padding: 40px 15px 30px;
-      }
+    .catalogo {
+      padding: 50px 20px;
+      text-align: center;
+      background: #111;
+    }
+    .catalogo h2 {
+      color: #9b30ff;
+      margin-bottom: 30px;
+      font-size: 2rem;
+    }
+    .productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .producto {
+      background: #222;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
+    }
+    .producto:hover {
+      transform: scale(1.05);
+    }
+    .producto img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .producto h3 {
+      margin: 15px 0 10px;
+      color: #fff;
+    }
+    .producto p {
+      color: #bbb;
+    }
 
-      .logo-small img {
-        height: 70px;
-      }
+    footer {
+      background: #111;
+      padding: 20px;
+      text-align: center;
+      margin-top: 40px;
+    }
+    footer a {
+      color: #9b30ff;
+      text-decoration: none;
+    }
 
-      .logo-big {
-        display: none;
-      }
-
-      header h1 {
-        font-size: 1.8rem;
-      }
-
-      header p {
-        font-size: 1rem;
-      }
-
-      nav a {
-        margin: 0 8px;
-        font-size: 0.9rem;
-      }
+    /* Botones flotantes */
+    .flotante {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 1000;
+    }
+    .flotante a img {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
+    }
+    .flotante a img:hover {
+      transform: scale(1.1);
     }
   </style>
 </head>
 <body>
   <header>
-    <!-- Logo pequeño (clic a inicio) -->
-    <div class="logo-small">
+    <!-- Logo pequeño fijo -->
+    <div class="logo-pequeno">
       <a href="index.html">
         <img src="logo.png" alt="NeoAudio MX">
       </a>
     </div>
 
-    <!-- Logo grande -->
-    <div class="logo-big">
+    <!-- Logo grande que desaparece al hacer scroll -->
+    <div class="logo-grande" id="logoGrande">
       <img src="logo.png" alt="NeoAudio MX">
     </div>
 
     <h1>NeoAudio MX</h1>
     <p>BORN TO BE LOUD</p>
-
     <nav>
       <a href="#catalogo">Catálogo</a>
       <a href="#contacto">Contacto</a>
     </nav>
   </header>
+
+  <section class="catalogo" id="catalogo">
+    <h2>Nuestros Productos</h2>
+    <div class="productos">
+      <div class="producto">
+        <img src="https://via.placeholder.com/300x200.png?text=Subwoofer" alt="Subwoofer">
+        <h3>Subwoofer</h3>
+        <p>Graves potentes para tu auto.</p>
+      </div>
+      <div class="producto">
+        <img src="https://via.placeholder.com/300x200.png?text=Amplificador" alt="Amplificador">
+        <h3>Amplificador</h3>
+        <p>Calidad de sonido superior.</p>
+      </div>
+      <div class="producto">
+        <img src="https://via.placeholder.com/300x200.png?text=Est%C3%A9reo" alt="Estéreo">
+        <h3>Estéreo</h3>
+        <p>La mejor experiencia en audio.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contacto">
+    <p>📍 León de los Aldama, MX</p>
+    <p>📧 <a href="mailto:neocaraudiomx@gmail.com">neocaraudiomx@gmail.com</a></p>
+    <p>📱 WhatsApp: <a href="https://wa.me/524791360002" target="_blank">+52 479 136 00 02</a></p>
+  </footer>
+
+  <!-- Botones flotantes -->
+  <div class="flotante">
+    <a href="https://wa.me/524791360002" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+    <a href="mailto:neocaraudiomx@gmail.com">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Correo">
+    </a>
+  </div>
+
+  <!-- Script para ocultar logo grande al hacer scroll -->
+  <script>
+    const logoGrande = document.getElementById("logoGrande");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        logoGrande.classList.add("oculto");
+      } else {
+        logoGrande.classList.remove("oculto");
+      }
+    });
+  </script>
 </body>
 </html>
