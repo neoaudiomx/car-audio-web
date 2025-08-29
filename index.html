@@ -20,21 +20,6 @@
       position: relative;
     }
 
-    /* Logo grande centrado */
-    .logo-grande {
-      margin-top: 10px;
-    }
-    .logo-grande img {
-      height: 120px;
-      width: auto;
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-    .logo-grande.oculto {
-      opacity: 0;
-      transform: scale(0.8);
-      pointer-events: none;
-    }
-
     /* Logo pequeño en esquina */
     .logo-pequeno {
       position: absolute;
@@ -159,11 +144,6 @@
       </a>
     </div>
 
-    <!-- Logo grande que desaparece al hacer scroll -->
-    <div class="logo-grande" id="logoGrande">
-      <img src="logo.png" alt="NeoAudio MX">
-    </div>
-
     <h1>NeoAudio MX</h1>
     <p>BORN TO BE LOUD</p>
     <nav>
@@ -208,17 +188,5 @@
       <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Correo">
     </a>
   </div>
-
-  <!-- Script para ocultar logo grande al hacer scroll -->
-  <script>
-    const logoGrande = document.getElementById("logoGrande");
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 50) {
-        logoGrande.classList.add("oculto");
-      } else {
-        logoGrande.classList.remove("oculto");
-      }
-    });
-  </script>
 </body>
 </html>
