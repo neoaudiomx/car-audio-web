@@ -3,226 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NeoAudio MX</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+  <title>Carrusel NeoAudio MX</title>
   <style>
     body {
       margin: 0;
+      background: #000;
+      color: white;
       font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, #1a002b, #000);
-      color: white;
-      text-align: center;
-    }
-
-    /* Header */
-    header {
-      padding: 30px 20px;
-      background: rgba(0,0,0,0.6);
-      border-bottom: 2px solid #b84dff;
-    }
-
-    header img {
-      max-width: 220px;
-      filter: drop-shadow(0 0 20px #b84dff);
-      animation: brillo 2s infinite alternate;
-    }
-
-    @keyframes brillo {
-      from { filter: drop-shadow(0 0 10px #b84dff); }
-      to { filter: drop-shadow(0 0 35px #ff00ff); }
-    }
-
-    .slogan {
-      font-size: 24px;
-      font-weight: bold;
-      margin: 15px 0;
-      color: #b84dff;
-      text-shadow: 0 0 10px #ff00ff;
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      margin-top: 15px;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      font-size: 18px;
-      transition: color 0.3s, text-shadow 0.3s;
-    }
-
-    nav a:hover {
-      color: #ff00ff;
-      text-shadow: 0 0 10px #ff00ff;
-    }
-
-    /* Productos */
-    .productos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 25px;
-      padding: 40px 20px;
-    }
-
-    .producto {
-      border: 2px solid #b84dff;
-      border-radius: 14px;
-      padding: 25px;
-      background: rgba(255,255,255,0.05);
-      transition: all 0.3s ease;
-    }
-
-    .producto:hover {
-      box-shadow: 0 0 30px #b84dff;
-      transform: scale(1.07);
-    }
-
-    .producto h3 {
-      margin-bottom: 10px;
-      color: #ff00ff;
-    }
-
-    /* Contacto */
-    .contacto {
-      margin: 40px 20px;
-      padding: 30px;
-      background: rgba(255,255,255,0.05);
-      border-radius: 12px;
-      border: 2px solid #b84dff;
-    }
-
-    .contacto button {
-      background: #25D366;
-      border: none;
-      padding: 15px 25px;
-      border-radius: 10px;
-      color: white;
-      font-size: 18px;
-      cursor: pointer;
-      transition: transform 0.3s, background 0.3s;
-    }
-
-    .contacto button:hover {
-      background: #1ebe5a;
-      transform: scale(1.05);
-    }
-
-    /* Footer */
-    footer {
-      padding: 25px;
-      font-size: 14px;
-      color: #aaa;
-      background: #0a0013;
-      border-top: 2px solid #b84dff;
-    }
-
-    /* Botones flotantes */
-    .social-float {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      z-index: 1000;
-    }
-
-    .social-float a {
-      width: 55px;
-      height: 55px;
-      border-radius: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
+      height: 100vh;
+    }
+
+    .carrusel {
+      position: relative;
+      width: 80%;
+      max-width: 900px;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 0 25px #b84dff;
+    }
+
+    .carrusel img {
+      width: 100%;
+      display: none;
+    }
+
+    .carrusel img.active {
+      display: block;
+    }
+
+    /* Botones */
+    .btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      border: none;
       color: white;
-      font-size: 26px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      font-size: 30px;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background 0.3s;
     }
 
-    .social-float a.whatsapp { background: #25D366; }
-    .social-float a.facebook { background: #1877F2; }
-    .social-float a.instagram {
-      background: radial-gradient(circle at 30% 30%, #feda77, #dd2a7b, #8134af, #515bd4);
+    .btn:hover {
+      background: rgba(0,0,0,0.8);
     }
 
-    .social-float a:hover {
-      transform: scale(1.2);
-      box-shadow: 0 0 15px rgba(255,255,255,0.8);
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        gap: 12px;
-      }
-    }
+    .prev { left: 10px; }
+    .next { right: 10px; }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <img src="logo.png" alt="NeoAudio MX Logo"> <!-- cámbialo a logo.png si es necesario -->
-    <div class="slogan">BORN TO BE LOUD</div>
-    <nav>
-      <a href="#catalogo">Catálogo</a>
-      <a href="#productos">Productos</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </header>
+  <div class="carrusel">
+    <img src="foto1.jpg" class="active" alt="Foto 1">
+    <img src="foto2.jpg" alt="Foto 2">
+    <img src="foto3.jpg" alt="Foto 3">
 
-  <!-- Productos -->
-  <main>
-    <section id="productos" class="productos">
-      <div class="producto">
-        <h3>Subwoofers</h3>
-        <p>Bajos potentes para vibrar con tu música.</p>
-      </div>
-      <div class="producto">
-        <h3>Medios Rangos</h3>
-        <p>Sonido claro y balanceado para frecuencias medias.</p>
-      </div>
-      <div class="producto">
-        <h3>Tweeters</h3>
-        <p>Agudos cristalinos para máxima fidelidad.</p>
-      </div>
-      <div class="producto">
-        <h3>Accesorios</h3>
-        <p>Todo lo que necesitas para complementar tu sistema.</p>
-      </div>
-    </section>
-
-    <!-- Contacto -->
-    <section id="contacto" class="contacto">
-      <h2>¿Quieres más información?</h2>
-      <p>Contáctanos para cotizaciones y asesoría personalizada.</p>
-      <a href="https://wa.me/524791360002" target="_blank">
-        <button>Escríbenos en WhatsApp</button>
-      </a>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <p>📍 León de los Aldama, MX</p>
-    <p>✉️ neoaudiomx@gmail.com</p>
-    <p>📞 +52 479 136 0002</p>
-    <p>© 2025 NeoAudio MX - Todos los derechos reservados</p>
-  </footer>
-
-  <!-- Botones flotantes -->
-  <div class="social-float">
-    <a href="https://wa.me/524791360002" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
-    <a href="https://www.facebook.com/share/15HuLrMpFs/?mibextid=wwXIfr" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
-    <a href="https://www.instagram.com/neo_audiocar?igsh=MWIyem1vMHd0NXd4aQ%3D%3D&utm_source=qr" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+    <button class="btn prev">&#10094;</button>
+    <button class="btn next">&#10095;</button>
   </div>
+
+  <script>
+    const images = document.querySelectorAll('.carrusel img');
+    let index = 0;
+
+    function showImage(i) {
+      images.forEach(img => img.classList.remove('active'));
+      images[i].classList.add('active');
+    }
+
+    document.querySelector('.next').addEventListener('click', () => {
+      index = (index + 1) % images.length;
+      showImage(index);
+    });
+
+    document.querySelector('.prev').addEventListener('click', () => {
+      index = (index - 1 + images.length) % images.length;
+      showImage(index);
+    });
+
+    // Automático cada 3 segundos
+    setInterval(() => {
+      index = (index + 1) % images.length;
+      showImage(index);
+    }, 3000);
+  </script>
 
 </body>
 </html>
